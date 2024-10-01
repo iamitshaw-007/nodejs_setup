@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "production-setup-for-node-project",
     "main": "src/server.js",
+    "type": "module",
     "scripts": {
         "build": "npx tsc",
         "dev": "nodemon src/server.ts",
@@ -16,6 +17,8 @@
     "author": "Amit Shaw",
     "license": "ISC",
     "devDependencies": {
+        "@commitlint/cli": "^19.5.0",
+        "@commitlint/config-conventional": "^19.5.0",
         "@types/node": "^22.7.4",
         "husky": "^9.1.6",
         "lint-staged": "^15.2.10",
