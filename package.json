@@ -4,12 +4,18 @@
   "description": "production-setup-for-node-project",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "test": "node index.test.js",
+    "start": "node index.js",
+    "prepare": "husky"
   },
   "keywords": [
     "nodeJS",
     "expressJS"
   ],
   "author": "Amit Shaw",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10"
+  }
 }
