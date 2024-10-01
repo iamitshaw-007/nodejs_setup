@@ -1,0 +1,15 @@
+{
+  "name": "nodejs-setup",
+  "version": "1.0.0",
+  "description": "production-setup-for-node-project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "nodeJS",
+    "expressJS"
+  ],
+  "author": "Amit Shaw",
+  "license": "ISC"
+}
