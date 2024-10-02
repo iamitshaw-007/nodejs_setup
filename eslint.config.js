@@ -40,7 +40,7 @@ export default [
             "no-bitwise":
                 "warn" /* Warn against the use of bitwise operators */,
             "no-console": [
-                "warn" /* Disallow the use of console, except for the following methods */,
+                "error" /* Disallow the use of console, except for the following methods */,
                 {
                     allow: [
                         "warn",
