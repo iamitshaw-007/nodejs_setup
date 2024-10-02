@@ -5,8 +5,9 @@
     "main": "src/server.js",
     "type": "module",
     "scripts": {
-        "build": "npx tsc",
-        "dev": "nodemon src/server.ts",
+        "build": "tsc",
+        "build:watch": "tsc --watch",
+        "dev": "nodemon",
         "start": "node dist/server.js",
         "prepare": "husky",
         "lint": "eslint .",
@@ -33,7 +34,7 @@
         "lint-staged": "^15.2.10",
         "nodemon": "^3.1.7",
         "prettier": "3.3.3",
-        "ts-node": "^10.9.2",
+        "tsx": "^4.19.1",
         "typescript": "^5.6.2",
         "typescript-eslint": "^8.8.0"
     },

@@ -1,12 +1,11 @@
 {
     "watch": ["src"],
-    "ext": "js,json,html",
+    "ext": "ts,js,json,html",
     "ignore": ["node_modules", "public"],
-    "delay": "2500",
     "env": {
-        "NODE_ENV": "development"
+        "NODE_ENV": "development",
+        "DEBUG": "app:*"
     },
-    "verbose": true,
     "restartable": "restart_nodemon",
-    "colours": true
+    "exec": "tsx src/server.ts"
 }
