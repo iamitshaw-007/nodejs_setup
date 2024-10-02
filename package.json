@@ -5,10 +5,10 @@
     "main": "src/server.js",
     "type": "module",
     "scripts": {
-        "build": "tsc",
+        "build": "tsc && node suffix_js_on_import.js",
         "build:watch": "tsc --watch",
-        "dev": "nodemon",
-        "start": "node dist/server.js",
+        "dev": "cross-env NODE_ENV=development nodemon",
+        "start": "cross-env NODE_ENV=production node dist/server.js",
         "prepare": "husky",
         "lint": "eslint .",
         "lint:fix": "eslint . --fix",
@@ -27,6 +27,7 @@
         "@eslint/js": "^9.11.1",
         "@types/eslint__js": "^8.42.3",
         "@types/node": "^22.7.4",
+        "cross-env": "^7.0.3",
         "eslint": "^9.11.1",
         "eslint-config-prettier": "^9.1.0",
         "globals": "^15.10.0",
@@ -48,5 +49,8 @@
         "*.{ts,js,cjs,mjs,md,html,css,scss}": [
             "npm run format:write"
         ]
+    },
+    "dependencies": {
+        "dotenv": "^16.4.5"
     }
 }
