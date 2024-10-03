@@ -2,6 +2,7 @@ import express, { Application } from "express";
 import path from "path";
 import usersRoute from "./routes/users.route";
 import { globalErrorHandler } from "./middlewares/global-error-handler.middleware";
+import { routeNotFoundHandler } from "./utils/404_not_found.util";
 
 const app: Application = express();
 
@@ -16,6 +17,9 @@ app.use(
 
 /* Routes */
 app.use("/api/v1/users", usersRoute);
+
+/* 404 handler */
+app.use("*", routeNotFoundHandler);
 
 /* global-error-handler middleware */
 app.use("*", globalErrorHandler);
