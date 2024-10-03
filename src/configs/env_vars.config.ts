@@ -19,7 +19,7 @@ try {
     process.exit(1);
 }
 
-export default {
+export const envVarsConfig = {
     SYSTEM_ENV: process.env.CURRENT_ENV,
     PORT: process.env.PORT,
 };
