@@ -21,4 +21,5 @@ try {
 
 export default {
     SYSTEM_ENV: process.env.CURRENT_ENV,
+    PORT: process.env.PORT,
 };

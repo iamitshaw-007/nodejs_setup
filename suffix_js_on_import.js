@@ -28,7 +28,8 @@ function processDirectory(directoryPath) {
         files.forEach((file) => {
             const filePath = path.join(directoryPath, file);
             if (fs.statSync(filePath).isDirectory()) {
-                processDirectory(filePath); // Recursively process subdirectories
+                // Recursively process subdirectories
+                processDirectory(filePath);
             } else if (filePath.endsWith(".js")) {
                 processFile(filePath);
             }
@@ -39,6 +40,7 @@ function processDirectory(directoryPath) {
 // Function to process a single file
 function processFile(filePath) {
     const fileContent = fs.readFileSync(filePath, "utf-8");
+    /* replace each import match with .js suffix  */
     const modifiedContent = fileContent.replace(regex, appendJsExtension);
     fs.writeFileSync(filePath, modifiedContent, "utf-8");
 }
