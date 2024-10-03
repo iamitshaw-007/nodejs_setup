@@ -1,7 +1,8 @@
 import { Request, Response } from "express";
 import { ISuccessHttpResponse } from "../types/http-response/success.type";
 import { envVarsConfig } from "../configs/env_vars.config";
-import { EApplicationEnvironment } from "../constants/application.constant";
+import { AppInstanceEnum } from "../constants/application.constant";
+import { loggerUtil } from "./logger.util";
 
 export function successHttpResponseObjectUtil(
     request: Request,
@@ -16,7 +17,7 @@ export function successHttpResponseObjectUtil(
         data,
         message: message,
         request:
-            envVarsConfig.SYSTEM_ENV === EApplicationEnvironment.DEVELOPMENT
+            envVarsConfig.INSTANCE === AppInstanceEnum.DEVELOPMENT
                 ? {
                       ip: request?.ip,
                       method: request?.method,
@@ -24,5 +25,7 @@ export function successHttpResponseObjectUtil(
                   }
                 : undefined,
     };
+
+    loggerUtil.info("Sending Success Response", { meta: successObject });
     response.status(statusCode).json(successObject);
 }

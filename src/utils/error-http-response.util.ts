@@ -1,8 +1,9 @@
 import { NextFunction, Request, Response } from "express";
 import { IErrorHttpResponse } from "../types/http-response/error.type";
 import { envVarsConfig } from "../configs/env_vars.config";
-import { EApplicationEnvironment } from "../constants/application.constant";
+import { AppInstanceEnum } from "../constants/application.constant";
 import { responseMessage } from "../constants/response-message.constant";
+import { loggerUtil } from "./logger.util";
 
 export function errorHttpResponseObjectUtil(
     error: Error | unknown,
@@ -12,8 +13,9 @@ export function errorHttpResponseObjectUtil(
     statusCode: number = 500,
     data: unknown = null
 ): void {
+    loggerUtil.info("Generating Error Object");
     let requestObject, traceObject;
-    if (envVarsConfig.SYSTEM_ENV === EApplicationEnvironment.DEVELOPMENT) {
+    if (envVarsConfig.INSTANCE === AppInstanceEnum.DEVELOPMENT) {
         requestObject = {
             ip: request?.ip,
             method: request?.method,

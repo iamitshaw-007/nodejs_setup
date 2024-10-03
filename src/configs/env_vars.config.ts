@@ -18,8 +18,7 @@ try {
     console.error(error);
     process.exit(1);
 }
-
 export const envVarsConfig = {
-    SYSTEM_ENV: process.env.CURRENT_ENV,
+    INSTANCE: process.env.CURRENT_ENV,
     PORT: process.env.PORT,
 };
