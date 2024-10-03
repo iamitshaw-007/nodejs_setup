@@ -8,7 +8,7 @@ export function listUsersHandler(
 ) {
     try {
         successHttpResponseObjectUtil(request, response, 200, {
-            message: "User Created",
+            message: "Users List",
         });
     } catch (error) {
         errorHttpResponseObjectUtil(error, request, response, nextFunction);

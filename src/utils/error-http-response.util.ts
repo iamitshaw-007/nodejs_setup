@@ -7,7 +7,7 @@ import { responseMessage } from "../constants/response-message.constant";
 export function errorHttpResponseObjectUtil(
     error: Error | unknown,
     request: Request,
-    response: Response,
+    _: Response,
     nextFunction: NextFunction,
     statusCode: number = 500,
     data: unknown = null
