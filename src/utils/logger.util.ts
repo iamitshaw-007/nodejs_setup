@@ -9,6 +9,10 @@ import {
 } from "winston/lib/winston/transports";
 import { AppInstanceEnum } from "../constants/application.constant";
 import path from "path";
+import sourceMapSupport from "source-map-support";
+
+/* Linking Trace Support */
+sourceMapSupport.install();
 
 const consoleLogFormat = format.printf((info) => {
     const { level, message, timestamp, meta = {} } = info;
