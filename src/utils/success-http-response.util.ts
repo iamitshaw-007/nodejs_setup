@@ -9,7 +9,7 @@ export function successHttpResponseObjectUtil(
     response: Response,
     statusCode: number,
     data: unknown,
-    message: string | undefined = undefined
+    message: string | undefined = "Success"
 ): void {
     const successObject: ISuccessHttpResponse = {
         success: true,

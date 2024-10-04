@@ -5,11 +5,20 @@ import { globalErrorHandler } from "./middlewares/global-error-handler.middlewar
 import { routeNotFoundHandler } from "./utils/404_not_found.util";
 import healthsRouter from "./routes/healths.route";
 import helmet from "helmet";
+import cors from "cors";
 
 const app: Application = express();
 
 /* third party Niddleware */
 app.use(helmet());
+app.use(
+    cors({
+        credentials: true,
+        methods: ["GET", "PUT", "POST", "DELETE"],
+        optionsSuccessStatus: 204,
+        origin: ["http://localhost"],
+    })
+);
 
 /* BuiltIn Middleware */
 app.use(express.json({ limit: 100 }));
