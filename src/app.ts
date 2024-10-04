@@ -3,6 +3,7 @@ import path from "path";
 import usersRoute from "./routes/users.route";
 import { globalErrorHandler } from "./middlewares/global-error-handler.middleware";
 import { routeNotFoundHandler } from "./utils/404_not_found.util";
+import healthsRouter from "./routes/healths.route";
 
 const app: Application = express();
 
@@ -17,6 +18,7 @@ app.use(
 
 /* Routes */
 app.use("/api/v1/users", usersRoute);
+app.use("/api/v1/health", healthsRouter);
 
 /* 404 handler */
 app.use("*", routeNotFoundHandler);
